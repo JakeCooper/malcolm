@@ -38,7 +38,9 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	case http.MethodGet:
 		rootGet(w, r)
 	case http.MethodPost:
-
+		rootPost(w, r)
+	case http.MethodDelete:
+		rootDelete(w, r)
 	default:
 		fourohfour(w, r)
 	}
