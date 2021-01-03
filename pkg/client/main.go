@@ -38,6 +38,7 @@ func (m *Malcolm) addProxy(protocol string, url string, out string) error {
 			case <-done:
 				ln.Close()
 				delete(m.listeners, k)
+				return
 			default:
 				connFrom, err := ln.Accept()
 				if err != nil {
