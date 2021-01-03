@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"html"
 	"net/http"
 	"os"
 
-	malcolm "github.com/JakeCooper/malcolm/src"
+	malcolm "github.com/JakeCooper/malcolm/pkg/client"
 )
 
 // []Rule
@@ -18,15 +17,16 @@ import (
 // }
 
 func rootGet(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+	w.Write([]byte("Not Implemented"))
+	// fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
 }
 
 func rootPost(w http.ResponseWriter, r *http.Request) {
-
+	w.Write([]byte("Not Implemented"))
 }
 
 func rootDelete(w http.ResponseWriter, r *http.Request) {
-	// json.Unmarshal()
+	w.Write([]byte("Not Implemented"))
 }
 
 func fourohfour(w http.ResponseWriter, r *http.Request) {
@@ -37,6 +37,8 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
 		rootGet(w, r)
+	case http.MethodPost:
+
 	default:
 		fourohfour(w, r)
 	}
@@ -58,7 +60,7 @@ func main() {
 		PORT = "1337"
 	}
 
-	http.HandleFunc("/", rootHandler)
+	http.HandleFunc("/rule", rootHandler)
 
 	malcolm.New()
 
