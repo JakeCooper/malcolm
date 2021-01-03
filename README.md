@@ -1,6 +1,6 @@
 # Malcolm
 
-Malcolm is a very small, dynamic reverse proxy backend by Redis and written in Go
+Malcolm is a very small, dynamic reverse proxy backed by Redis and written in Go
 
 You tell Malcolm a mapping, it'll store it and a proxy'd connection
 
