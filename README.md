@@ -8,7 +8,7 @@ You tell Malcolm a mapping, it'll store it and a proxy'd connection
 
 1. Git clone
 2. make build
-3. REDISHOST=x REDISPORT=y ./malcolm (Optionally provide REDISPASSWORD)
+3. `REDISHOST=x REDISPORT=y ./malcolm (Optionally provide REDISPASSWORD)`
 
 Malcom is now running on port 1337 (Or PORT if you pass it in)
 
