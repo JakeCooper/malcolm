@@ -48,7 +48,7 @@ func (m *Malcolm) addProxy(protocol string, url string, out string) error {
 				if err != nil {
 					fmt.Println(err)
 				}
-				c := proxy.New(&connFrom, &connTo)
+				c := proxy.New(connFrom, connTo)
 				c.Proxy()
 			}
 		}
